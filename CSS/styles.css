@@ -83,12 +83,34 @@ p{
 }
 
 /*componentes*/
+/*sesion hero image******/
+.hero-image{
+    background-image: var(--hero-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: var(--hero-attachment);
+}
+.hero-imagine-opacity{
+    width: 100%;
+    min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center; 
+     background-color: var(--hero-opacity-color);
+}
+.hero-image-title{
+    font-size: 7.5vw;
+    color:var(--hero-text-color);
+}
+/* sesion menu**********/
 .menu-btn{
     outline: thin solid var(--first-color);
     background-color: var(--second-color);
     border: 0;
     cursor: pointer;
-}
+}  
 
 .menu svg{
     fill: var(--first-color);
@@ -123,8 +145,29 @@ p{
 .menu a:hover{
     color:var(--white-color) ;
     background-color: var(--first-color);
-
 }
+/* desaparece el menu hamburguesa de la barra de navbar*/
+
+@media screen and (min-width:1024px){
+    .menu-btn{
+        display: none;
+    }
+    .menu{
+        position: static;
+        width: auto;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .menu a{
+        padding: 0 1rem;
+    }
+    .menu a:hover{
+        background-color: transparent;
+
+    }
+}
+
 /*utilidades*/
 .box-shadow-1{
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
@@ -159,14 +202,32 @@ p{
     text-decoration: none;
 }
 
-@media screen and (min-widh: 768px) {
+.btn{
+    border-radius: .5rem;
+    padding: 1rem;
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
+} 
+
+/*version desktop*/
+@media screen and (min-width:768px) {
     
 }
-@media screen and (min-widh: 1024px) {
+/*version tablet*/
+@media screen and (min-width:1024px){
  .header{
     position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: calc(var(--header-height)-0.5rem);
  }   
 }
+
 /*site style*/
 
 /* ****style body**** */
