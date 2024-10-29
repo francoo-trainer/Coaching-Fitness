@@ -83,7 +83,7 @@ p{
 }
 
 /*componentes*/
-/*sesion hero image******/
+/*seccion hero image******/
 .hero-image{
     background-image: var(--hero-image);
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ p{
     font-size: 7.5vw;
     color:var(--hero-text-color);
 }
-/* sesion menu**********/
+/* seccion menu**********/
 .menu-btn{
     outline: thin solid var(--first-color);
     background-color: var(--second-color);
