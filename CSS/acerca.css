@@ -1,11 +1,9 @@
-/*custom properties*/
-/*globales*/
 :root{
     --first-color:#c10101;
-    --second-color:#ffffff;
+    --second-color:rgb(1, 12, 58);
     --gray-color:#ccc;
     --black-color:#000;
-    --link-color:blue;
+    --link-color:rgb(249, 249, 252);
     --text-color:#ffffff;
     --buttom:rgb(1, 12, 58);
 }
@@ -40,7 +38,7 @@ html {
   body {
     line-height: 1.5;
     /* Puedes cambiarla luego */
-    background-color: var(--first-color);
+    background-color: var(--second-color);
     color: var(--text-color);
     font-size: 16px;
   }
@@ -60,7 +58,7 @@ html {
   
 
 a{
-    color: var(--second-color);
+    color: var(--link-color);
     transition: all 0.5s ease-out ;
     text-decoration: none;
 }
@@ -85,18 +83,18 @@ img{
       "header"
       "main"
       "footer";
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto;
     min-height: 100vh;
   }
   
   /* 2. HEADER COMO GRID */
-  .header {
+  .header {  
     grid-area: header;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "logo espacio nav";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo nav";
     background-color:var(--black-color);
-    padding: 1rem;
+    padding: 2rem;
     align-items: center;
     color: white;
   }
@@ -105,10 +103,6 @@ img{
     grid-area: logo;
     max-width: 30%;
     height: auto;
-  }
-  
-  .espacio-central {
-    grid-area: espacio;
   }
   
   .nav {
@@ -124,40 +118,110 @@ img{
     font-size: 1.5rem;
   }
   
-  /* 3. MAIN CON HERO IMAGE */
-  .main {
-    grid-area: main;
-    display: flex;
-    justify-content: center;
+  
+  /* 3. MAIN card */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Imagen 1 parte, texto 2 partes */
+    gap: 20px;
     align-items: center;
-    background-color: #ecf0f1;
-    position: relative;
-  }
-  
-  .hero {
-    position: relative;
-    text-align: center;
-  }
-  
-  .hero img {
     max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--black-color);
+  }
+  
+  .card-img img {
+    width: 100%;
     height: auto;
-    display: block;
-  }
-  
-  .hero button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    background-color: var( --buttom);
-    padding: 1rem 2rem;
     border-radius: 10px;
+    object-fit: cover;
+  }
+
+
+  .text-content h2 {
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  .text-content h4 {
+    text-align: center;
+    margin: 0 0 10px;
+    font-weight: bold;
+    border: 1px solid #d70202;
   }
   
+  .text-content p {
+    margin: 0;
+    text-align:justify;
+    font-size: 18px;
+
+  }
+  @media (max-width: 600px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .card-img img {
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+  /* 3. MAIN card-two */
+  .card-grid_two {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Imagen 1 parte, texto 2 partes */
+    gap: 20px;
+    align-items: center;
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--black-color);
+  }
+  
+  .card-img, .card-img_two img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+
+  .text-content h2 {
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  .text-content h4 {
+    text-align: center;
+    margin: 0 0 10px;
+    font-weight: bold;
+    border: 1px solid #d70202;
+  }
+  
+  .text-content p {
+    margin: 0;
+    text-align:justify;
+    font-size: 18px;
+
+  }
+  @media (max-width: 600px) {
+    .card-grid_two {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .card-img_two img {
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+
   /* 4. FOOTER */
   .footer {
     grid-area: footer;
